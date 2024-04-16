@@ -1,0 +1,27 @@
+{
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@now/node-server"
+      },
+      {
+        "src": "public/*",
+        "use": "@now/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/countries",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/api/countries/:id",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/public/$1"
+      }
+    ]
+  }
+  
